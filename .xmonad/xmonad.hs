@@ -6,6 +6,7 @@ import System.IO
 import System.Exit
 import XMonad
 import XMonad.Hooks.DynamicLog
+import XMonad.Actions.CycleWS
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
@@ -194,6 +195,13 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Eject CD tray.
   , ((0, 0x1008FF2C),
      spawn "eject -T")
+
+  -- Cycle through workspaces
+  , ((modMask, xK_u),
+     nextWS)
+
+  , ((modMask, xK_a),
+     prevWS)
 
   --------------------------------------------------------------------
   -- "Standard" xmonad key bindings
