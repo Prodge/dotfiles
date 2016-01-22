@@ -94,8 +94,8 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 "Keep cursor in the same place when moving pages
-nnoremap <PageUp> 40<C-y>
-nnoremap <PageDown> 40<C-e>
+nnoremap <PageUp> 20<C-y>
+nnoremap <PageDown> 20<C-e>
 
 "Show the next match while entering a search
 "":set incsearch
