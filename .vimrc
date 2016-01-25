@@ -107,6 +107,7 @@ set wildchar=<Tab> wildmenu wildmode=full
 
 "Will do a case insensitive search if the search is all lowercase
 set smartcase
+set ignorecase
 
 "Auto refresh files on change
 set autoread
