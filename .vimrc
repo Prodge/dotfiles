@@ -37,6 +37,11 @@ nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 
+"Highlight git conflicts
+match Error /=======/
+match Error /<<<<<<</
+match Error />>>>>>>/
+
 
 filetype plugin on
 
@@ -111,3 +116,4 @@ set ignorecase
 
 "Auto refresh files on change
 set autoread
+

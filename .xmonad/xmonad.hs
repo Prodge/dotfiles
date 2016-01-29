@@ -18,6 +18,7 @@ import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
+import XMonad.Layout.Gaps
 
 import qualified Data.Map as M
 import XMonad
@@ -34,7 +35,7 @@ import qualified XMonad.StackSet as W
 -- certain contrib modules.
 --
 -- myTerminal = "/usr/bin/urxvt"
-myTerminal = "/usr/bin/gnome-terminal"
+myTerminal = "/usr/bin/terminator"
 
 ------------------------------------------------------------------------
 -- Workspaces
@@ -58,13 +59,13 @@ myWorkspaces = ["1:web","2:code","3:term","4","5"] ++ map show [6..9]
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "chromium-browser"  --> doShift "9"
-    , resource  =? "desktop_window" --> doIgnore
+    [ resource  =? "desktop_window" --> doIgnore
     , className =? "Galculator"     --> doFloat
     , className =? "Steam"          --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "gpicview"       --> doFloat
     , className =? "MPlayer"        --> doFloat
+    {-, className =? "chromium-browser"  --> doShift "9"-}
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
@@ -170,15 +171,15 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Decrease volume.
   , ((modMask .|. controlMask, xK_j),
-     spawn "amixer -D pulse sset Master 10%-")
+     spawn "amixer -D pulse sset Master 5%-")
   , ((0, 0x1008ff11),
-     spawn "amixer -D pulse sset Master 10%-")
+     spawn "amixer -D pulse sset Master 5%-")
 
   -- Increase volume.
   , ((modMask .|. controlMask, xK_k),
-     spawn "amixer -D pulse sset Master 10%+")
+     spawn "amixer -D pulse sset Master 5%+")
   , ((0, 0x1008ff13),
-     spawn "amixer -D pulse sset Master 10%+")
+     spawn "amixer -D pulse sset Master 5%+")
 
   -- Aurio previous.
   , ((0, 0x1008FF16),
@@ -197,10 +198,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      spawn "eject -T")
 
   -- Cycle through workspaces
-  , ((modMask, xK_u),
+  , ((modMask, xK_i),
      nextWS)
 
-  , ((modMask, xK_a),
+  , ((modMask, xK_o),
      prevWS)
 
   --------------------------------------------------------------------
@@ -252,11 +253,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      windows W.swapUp    )
 
   -- Shrink the master area.
-  , ((modMask, xK_i),
+  , ((modMask, xK_j),
      sendMessage Shrink)
 
   -- Expand the master area.
-  , ((modMask, xK_d),
+  , ((modMask, xK_k),
      sendMessage Expand)
 
   -- Push window back into tiling.
@@ -294,7 +295,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
   -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
   [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
-      | (key, sc) <- zip [xK_o, xK_e, xK_r] [0..]
+      | (key, sc) <- zip [xK_e, xK_u, xK_r] [0..]
       , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
@@ -390,7 +391,9 @@ defaults = defaultConfig {
     mouseBindings      = myMouseBindings,
 
     -- hooks, layouts
-    layoutHook         = smartBorders $ myLayout,
+    layoutHook         = gaps [(U,20)] $ Tall 1 (3/100) (1/2) ||| Full,   --leave gaps at the top and right
+    {-layoutHook         = smartBorders $ myLayout,-}
     manageHook         = myManageHook,
     startupHook        = myStartupHook
 }
+
