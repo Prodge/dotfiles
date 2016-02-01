@@ -232,9 +232,13 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_j),
      windows W.focusDown)
 
-  -- Move focus to the previous window.
-  , ((modMask, xK_k),
-     windows W.focusUp  )
+  -- Move focus to the next window.
+  , ((modMask, xK_j),
+     windows W.focusDown)
+
+  {--- Move focus to the previous window.-}
+  {-, ((modMask, xK_k),-}
+     {-windows W.focusUp  )-}
 
   -- Move focus to the master window.
   , ((modMask, xK_m),
@@ -248,16 +252,16 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. shiftMask, xK_j),
      windows W.swapDown  )
 
-  -- Swap the focused window with the previous window.
-  , ((modMask .|. shiftMask, xK_k),
-     windows W.swapUp    )
+  {--- Swap the focused window with the previous window.-}
+  {-, ((modMask .|. shiftMask, xK_k),-}
+     {-windows W.swapUp    )-}
 
   -- Shrink the master area.
-  , ((modMask, xK_j),
+  , ((modMask, xK_k),
      sendMessage Shrink)
 
   -- Expand the master area.
-  , ((modMask, xK_k),
+  , ((modMask, xK_x),
      sendMessage Expand)
 
   -- Push window back into tiling.
