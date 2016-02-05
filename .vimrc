@@ -25,8 +25,8 @@ map <C-n> :NERDTreeToggle<CR>
 
 "Tab Command Maps
 nmap <C-t> :tabnew<CR>
-nmap <C-o> :tabnext<CR>
-nmap <C-i> :tabprevious<CR>
+nmap <C-u> :tabnext<CR>
+nmap <C-e> :tabprevious<CR>
 
 "Resize windows
 nmap <C-j> :vertical resize +5<CR>
