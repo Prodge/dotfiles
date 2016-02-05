@@ -1,0 +1,16 @@
+COUNTER=1
+NUM_LINES="$(git branch | cat | sed 's/develop//' | sed 's/  //' | sed 's/* //' | sed '/^$/d' | wc -l)"
+git branch | cat | sed 's/develop//' | sed 's/  //' | sed 's/* //' | sed '/^$/d' | while read line ; do
+    printf "Updating branch (%s/%s): %s   [" $COUNTER $NUM_LINES $line
+    git checkout $line &> /dev/null
+    printf "="
+    git pull origin develop &> /dev/null
+    if [[ $(git ls-files -u) ]] ; then
+        echo "MERGE CONFLICT. Terminating..."
+        exit 1
+    fi
+    printf "="
+    git push tim $line &> /dev/null
+    printf "=]\n"
+    let COUNTER=COUNTER+1
+done
