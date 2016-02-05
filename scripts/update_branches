@@ -1,16 +1,25 @@
+#!/bin/bash
+
+# Pulls master branch into all branches and terminates at a conflict
+# http://prodge.net
+
+MASTER="develop"
+PULLREPO="origin"
+PUSHREPO="tim"
+
 COUNTER=1
-NUM_LINES="$(git branch | cat | sed 's/develop//' | sed 's/  //' | sed 's/* //' | sed '/^$/d' | wc -l)"
-git branch | cat | sed 's/develop//' | sed 's/  //' | sed 's/* //' | sed '/^$/d' | while read line ; do
+NUM_LINES="$(git branch | cat | sed 's/$MASTER//' | sed 's/  //' | sed 's/* //' | sed '/^$/d' | wc -l)"
+git branch | cat | sed 's/$MASTER//' | sed 's/  //' | sed 's/* //' | sed '/^$/d' | while read line ; do
     printf "Updating branch (%s/%s): %s   [" $COUNTER $NUM_LINES $line
     git checkout $line &> /dev/null
     printf "="
-    git pull origin develop &> /dev/null
+    git pull $PULLREPO $MASTER &> /dev/null
     if [[ $(git ls-files -u) ]] ; then
         echo "MERGE CONFLICT. Terminating..."
         exit 1
     fi
     printf "="
-    git push tim $line &> /dev/null
+    git push $PUSHREPO $line &> /dev/null
     printf "=]\n"
     let COUNTER=COUNTER+1
 done
