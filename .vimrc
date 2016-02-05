@@ -25,23 +25,17 @@ map <C-n> :NERDTreeToggle<CR>
 
 "Tab Command Maps
 nmap <C-t> :tabnew<CR>
-nmap <C-u> :tabnext<CR>
-nmap <C-e> :tabprevious<CR>
-nmap <C-x> :tabclose<CR>
+nmap <C-o> :tabnext<CR>
+nmap <C-i> :tabprevious<CR>
 
-"Mapping Window changes
-nmap <silent> <C-d> :wincmd l<CR>
-nmap <silent> <C-i> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
+"Resize windows
+nmap <C-j> :vertical resize +5<CR>
+nmap <C-k> :vertical resize -5<CR>
 
 "Highlight git conflicts
 match Error /=======/
 match Error /<<<<<<</
 match Error />>>>>>>/
-
 
 filetype plugin on
 
