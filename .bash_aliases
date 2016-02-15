@@ -1,0 +1,5 @@
+alias notes='cd ~/documents/University/Notes/2016/ && ls'
+alias c='clear'
+alias cls='clear && ls'
+alias ll='clear && ls -al'
+alias upgrade='sudo apt-get update && sudo apt-get -y upgrade'
