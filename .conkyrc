@@ -1,0 +1,43 @@
+# conky configuration
+#
+##############################################
+# Settings
+##############################################
+background yes
+use_xft yes
+#xftfont Liberation Sans:size=9
+xftfont Monospace:size=9
+xftalpha 1
+update_interval 0.3
+total_run_times 0
+own_window yes
+own_window_transparent yes
+#own_window_type desktop
+own_window_type override
+#own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 3840 4
+maximum_width 3840
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color 656667
+default_shade_color 000000
+default_outline_color 828282
+alignment top_left
+gap_x 0
+gap_y 0
+default_color white
+#no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+text_buffer_size 2048
+##############################################
+#  Output
+##############################################
+TEXT
+#Host:$alignr$nodename
+Uptime: $uptime   RAM: $mem/$memmax   Swap usage: $swap/$swapmax   Disk usage: ${fs_used /}/${fs_size /}   CPU usage: ${cpu cpu0}%   Volume: ${exec pactl list sinks | grep "Volume: 0" | cut -d " " -f4 | grep % }   Downspeed: ${downspeed eth0}   $alignr ${time %H:%M - %d.%m.%Y}
