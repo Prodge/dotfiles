@@ -395,7 +395,7 @@ defaults = defaultConfig {
     mouseBindings      = myMouseBindings,
 
     -- hooks, layouts
-    layoutHook         = gaps [(U,20)] $ Tall 1 (3/100) (1/2) ||| Full,   --leave gaps at the top and right
+    {-layoutHook         = gaps [(U,20)] $ Tall 1 (3/100) (1/2) ||| Full,   --leave gaps at the top-}
     {-layoutHook         = smartBorders $ myLayout,-}
     manageHook         = myManageHook,
     startupHook        = myStartupHook
