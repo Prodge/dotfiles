@@ -71,7 +71,7 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 "Enable Airline all the time
 set laststatus=2
 "Set Airline colourscheme
-let g:airline_theme='term'
+let g:airline_theme='distinguished'
 
 "Set keybind for CtrlP
 let g:ctrlp_map = '<c-p>'
