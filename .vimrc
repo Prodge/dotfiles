@@ -116,3 +116,5 @@ set ignorecase
 "Auto refresh files on change
 set autoread
 
+"filetypes for closetag to run
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
