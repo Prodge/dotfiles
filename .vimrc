@@ -19,6 +19,7 @@ let g:indentLine_char = '¦'
 "autocmd vimenter * NERDTree
 "Close nerdtree upon file select
 let NERDTreeQuitOnOpen = 1
+let NERDTreeShowHidden=1
 
 "Set NERDTree Toggle to ctrl-n
 map <C-n> :NERDTreeToggle<CR>
