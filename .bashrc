@@ -17,6 +17,8 @@ export HISTCONTROL=ignoredups
 # instead of overwriting it.
 shopt -s histappend
 
+export HISTFILESIZE=50000
+
 # Append commands to the history every time a prompt is shown,
 # instead of after closing the session.
 PROMPT_COMMAND='history -a'
