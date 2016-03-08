@@ -39,9 +39,9 @@ match Error />>>>>>>/
 
 filetype plugin on
 
-"Added at work
 let g:paredit_electric_return = 0
 
+"Nerdtree ignore compiled python files
 let NERDTreeIgnore = ['\.pyc$']
 
 colorscheme zenburn
@@ -80,7 +80,7 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'c'
 
 "Highlighting search matches
-:set hlsearch
+set hlsearch
 
 "Highlight ipdb traces
 match Error /ipdb.set_trace()/
