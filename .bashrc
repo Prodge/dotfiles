@@ -10,14 +10,16 @@ PS1='[\u@\h \W]\$ '
 # Default editor to vim
 export EDITOR=vim
 
-# Ignore successive duplicates in bash history
-export HISTCONTROL=ignoredups
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
 
 # Append commands to the bash command history file (~/.bash_history)
 # instead of overwriting it.
 shopt -s histappend
 
-export HISTFILESIZE=50000
+HISTSIZE=50000
+HISTFILESIZE=50000
 
 # Append commands to the history every time a prompt is shown,
 # instead of after closing the session.
