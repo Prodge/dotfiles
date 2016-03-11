@@ -17,3 +17,6 @@ alias rgrep='grep --colour=auto -r'
 #Command default flags
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
+
+#Takes a screenshot every 1.1 seconds (to avoid duplicate names)
+alias timelapse='while [ 1 ]; do scrot -q 80 $(date +%s).jpg; sleep 1.1; done'
