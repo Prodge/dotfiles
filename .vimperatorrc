@@ -1,2 +1,9 @@
 " Ctrl-a
 inoremap <C-a> <C-Home><C-S-End>
+
+" Remap hint characters
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+
+" Page up and down jumps 20 lines at a time
+nnoremap <PageUp> 20k
+nnoremap <PageDown> 20j
