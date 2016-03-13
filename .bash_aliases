@@ -1,5 +1,6 @@
 #Stortcuts
 alias notes='cd ~/documents/University/Notes/2016/ && ls'
+alias takenotes='vi -O ~/documents/University/Notes/2016/todo.txt'
 alias cdsiq='cd /home/tim/projects/signiq/siq8/'
 
 #Batch actions
