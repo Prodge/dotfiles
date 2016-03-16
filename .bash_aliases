@@ -9,6 +9,7 @@ alias upgrade='sudo apt-get update && sudo apt-get -y upgrade'
 alias cls='clear && ls --color=auto'
 alias ll='clear && ls -al --color=auto'
 
+alias connect_unifi='sudo ip link set w1p1s0 down && netctl start w1p1s0-Unifi'
 
 alias vi='vim'
 alias c='clear'
