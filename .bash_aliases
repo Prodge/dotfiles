@@ -1,6 +1,7 @@
 #Stortcuts
 alias notes='cd ~/documents/University/Notes/2016/ && ls'
 alias cdsiq='cd ~/projects/signiq/siq8/'
+alias t='date +"Time: %H:%M"'
 
 #Batch actions
 alias upgrade='sudo apt-get update && sudo apt-get -y upgrade'
