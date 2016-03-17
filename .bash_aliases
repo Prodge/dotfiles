@@ -1,5 +1,6 @@
 #Stortcuts
 alias notes='cd ~/documents/University/Notes/2016/ && ls'
+alias takenotes='vi -O ~/documents/University/Notes/2016/todo.txt'
 alias cdsiq='cd ~/projects/signiq/siq8/'
 alias t='date +"Time: %H:%M"'
 
@@ -9,6 +10,7 @@ alias upgrade='sudo apt-get update && sudo apt-get -y upgrade'
 alias cls='clear && ls --color=auto'
 alias ll='clear && ls -al --color=auto'
 
+alias connect_unifi='sudo ip link set w1p1s0 down && netctl start w1p1s0-Unifi'
 
 alias vi='vim'
 alias c='clear'
