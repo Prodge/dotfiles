@@ -15,7 +15,7 @@ alias connect_unifi='sudo ip link set w1p1s0 down && netctl start wlp1s0-Unifi'
 alias vi='vim'
 alias c='clear'
 
-alias rgrep='grep --colour=auto -r'
+alias rgrep='grep --colour=auto -rn'
 
 #Command default flags
 alias grep='grep --color=auto'
