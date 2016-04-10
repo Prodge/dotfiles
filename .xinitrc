@@ -1,11 +1,13 @@
+exec xmonad
+
 #Setting keyboard repeat rate
 xset r rate 300 40 &
 
 #Starting autokey
-autokey &
+#autokey &
 
 #Starting conky
-conky &
+#conky &
 
 #Setting background
 xsetroot -solid "#000000" &

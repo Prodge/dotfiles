@@ -10,6 +10,9 @@ PS1='[\u@\h \W]\$ '
 # Default editor to vim
 export EDITOR=vim
 
+# GTK 3 config dir
+export XDG_CONFIG_HOME=/gtk-3.0/settings.ini
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
