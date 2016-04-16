@@ -35,7 +35,7 @@ import qualified XMonad.StackSet as W
 -- certain contrib modules.
 --
 -- myTerminal = "/usr/bin/urxvt"
-myTerminal = "/usr/bin/terminator"
+myTerminal = "/usr/bin/urxvt"
 
 ------------------------------------------------------------------------
 -- Workspaces
