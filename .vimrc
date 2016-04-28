@@ -79,6 +79,16 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 "Set CtrlP to look in the current directory
 let g:ctrlp_working_path_mode = 'c'
+"Set persistant ctrlp cache
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+"use ag instead of vim's globpath to search
+"NOTE: Need to install ag to use this
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+"bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "Highlighting search matches
 set hlsearch
