@@ -16,7 +16,7 @@ execute pathogen#infect()
 let g:indentLine_char = '¦'
 
 "Start NERDTree Automatically
-"autocmd vimenter * NERDTree
+"Autocmd vimenter * NERDTree
 "Close nerdtree upon file select
 let NERDTreeQuitOnOpen = 1
 let NERDTreeShowHidden=1
