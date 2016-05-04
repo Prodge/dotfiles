@@ -6,6 +6,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+"Tab is 2 spaces for html and jade
+autocmd FileType html,jade :setlocal sw=2 ts=2 sts=2
+
 "List formatting
 set com=b:-
 set formatoptions=tcroqln
