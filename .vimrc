@@ -79,6 +79,9 @@ let g:airline_theme='distinguished'
 
 "Set keybind for CtrlP
 let g:ctrlp_map = '<c-p>'
+
+"Toggle paste mode shortcut
+set pastetoggle=<F2>
 let g:ctrlp_cmd = 'CtrlP'
 "Set CtrlP to look in the current directory
 let g:ctrlp_working_path_mode = 'c'
