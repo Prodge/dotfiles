@@ -3,6 +3,7 @@ alias notes='cd ~/documents/University/Notes/2016/ && ls'
 alias takenotes='vi -O ~/documents/University/Notes/2016/todo.txt'
 alias cdsiq='cd ~/projects/signiq/siq8/'
 alias t='date +"Time: %H:%M"'
+alias k='kanban'
 
 #Batch actions
 alias upgrade='sudo apt-get update && sudo apt-get -y upgrade'
