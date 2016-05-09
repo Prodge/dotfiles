@@ -15,6 +15,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
 import XMonad.Layout.Tabbed
 import XMonad.Util.Run(spawnPipe)
+import XMonad.Layout.Reflect ( reflectHoriz, reflectVert )
 import XMonad.Util.EZConfig(additionalKeys)
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -81,9 +82,10 @@ myManageHook = composeAll
 --
 myLayout = avoidStruts (
     Tall 1 (3/100) (1/2) |||
-    Mirror (Tall 1 (3/100) (1/2)) |||
-    tabbed shrinkText tabConfig |||
-    Full |||
+    {-Mirror (Tall 1 (3/100) (1/2)) |||-}
+    reflectVert (Mirror (Tall 1 (3/100) (1/2))) |||
+    {-tabbed shrinkText tabConfig |||-}
+    {-Full |||-}
     spiral (6/7)) |||
     noBorders (fullscreenFull Full)
 
@@ -396,7 +398,7 @@ defaults = defaultConfig {
 
     -- hooks, layouts
     {-layoutHook         = gaps [(U,20)] $ Tall 1 (3/100) (1/2) ||| Full,   --leave gaps at the top-}
-    {-layoutHook         = smartBorders $ myLayout,-}
+    layoutHook         = smartBorders $ myLayout,
     manageHook         = myManageHook,
     startupHook        = myStartupHook
 }
