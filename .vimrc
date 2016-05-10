@@ -6,6 +6,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+"Retab the whole file
+map <F7> mzgg=G`z
+
 "List formatting
 set com=b:-
 set formatoptions=tcroqln
