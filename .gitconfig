@@ -1,0 +1,45 @@
+[user]
+	name = Prodge
+	email = prodge@prodge.net
+[core]
+	editor = vim
+[web]
+    browser = firefox
+[push]
+    default = matching
+[color "branch"]
+    current = yellow bold
+    local = green bold
+    remote = cyan bold
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+[color "status"]
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[github]
+    user = prodge
+[alias]
+    a = add --all
+    ai = add -i
+    b = branch
+    c = commit
+    ca = commit -a
+    cm = commit -m
+    d = diff
+    ps = push
+    psom = push origin master
+    pl = pull
+    plom = pull origin master
+    rb = rebase
+    re = reset
+    r = remote
+    rv = remote -v
