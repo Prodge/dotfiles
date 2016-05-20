@@ -90,7 +90,7 @@ let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 "use ag instead of vim's globpath to search
 "NOTE: Need to install ag to use this
 if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore-case --ignore-dir vpweb --ignore-dir vptest --ignore-dir cover -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore-case --ignore-dir vpweb --ignore-dir vptest --ignore-dir cover --ignore-dir media-files -g ""'
 endif
 
 "bind K to grep word under cursor
