@@ -28,6 +28,7 @@
 [github]
     user = prodge
 [alias]
+    s = status
     a = add --all
     ai = add -i
     b = branch
