@@ -5,8 +5,8 @@
 	editor = vim
 [web]
     browser = firefox
-#[push]
-#    default = matching
+[push]
+    default = simple
 [color "branch"]
     current = yellow bold
     local = green bold
