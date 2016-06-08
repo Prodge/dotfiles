@@ -134,3 +134,7 @@ set autoread
 
 "filetypes for closetag to run
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
+
+" Remap F1 to escape from insert mode
+inoremap <F1> <Esc>
+noremap <F1> <Esc>
