@@ -35,6 +35,7 @@
     c = commit
     ca = commit -a
     cm = commit -m
+    cam = commit -am
     d = diff
     ps = push
     psom = push origin master
