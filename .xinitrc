@@ -1,4 +1,4 @@
-exec xmonad &
+exec xmonad
 
 # Setting keyboard repeat rate
 xset r rate 300 40 &
@@ -7,7 +7,7 @@ xset r rate 300 40 &
 setxkbmap us -variant dvp &
 
 # Set screen layout
-sh ~/.screenlayout/og-main-left-portrait.sh
+exec sh ~/.screenlayout/og-main-left-portrait.sh
 
 # Starting autokey
 #autokey &
