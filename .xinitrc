@@ -6,6 +6,9 @@ xset r rate 300 40 &
 # Set keyboard layout to dvorak
 setxkbmap us -variant dvp &
 
+# Set screen layout
+sh ~/.screenlayout/og-main-left-portrait.sh
+
 # Starting autokey
 #autokey &
 
