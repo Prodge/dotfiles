@@ -1,4 +1,4 @@
-exec xmonad
+exec xmonad &
 
 # Setting keyboard repeat rate
 xset r rate 300 40 &
