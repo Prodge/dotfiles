@@ -1,14 +1,17 @@
-exec xmonad
+exec xmonad &
 
-#Setting keyboard repeat rate
+# Setting keyboard repeat rate
 xset r rate 300 40 &
 
-#Starting autokey
+# Set keyboard layout to dvorak
+setxkbmap us -variant dvp &
+
+# Starting autokey
 #autokey &
 
-#Starting conky
+# Starting conky
 #conky &
 
-#Setting background
+# Setting background
 xsetroot -solid "#000000" &
 #xloadimage -onroot -fullscreen ~/Downloads/bg.jpg
