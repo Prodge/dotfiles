@@ -7,7 +7,7 @@ exec setxkbmap us -variant dvp &
 # Set Display layout
 case $HOSTNAME in
   (arch) echo "No custom layout for laytop" &;;
-  (archog) echo sh ~/.screenlayout/og-main-left-portrait.sh &;;
+  (archog) sh ~/.screenlayout/og-main-left-portrait.sh &;;
   (*)   echo "Default action is nothing" &;;
 esac
 
