@@ -4,8 +4,12 @@ xset r rate 300 40 &
 # Set keyboard layout to dvorak
 exec setxkbmap us -variant dvp &
 
-# Set screen layout
-sh ~/.screenlayout/og-main-left-portrait.sh &
+# Set Display layout
+case $HOSTNAME in
+  (arch) echo "No custom layout for laytop" &;;
+  (archog) echo sh ~/.screenlayout/og-main-left-portrait.sh &;;
+  (*)   echo "Default action is nothing" &;;
+esac
 
 # Clear user tmp folder
 rm -rf tmp/* &
@@ -13,12 +17,8 @@ rm -rf tmp/* &
 # Starting autokey
 #autokey &
 
-# Starting conky
-#conky &
-
 # Setting background
 xsetroot -solid "#000000" &
-#xloadimage -onroot -fullscreen ~/Downloads/bg.jpg
 
 # Start xmonad
 exec xmonad
