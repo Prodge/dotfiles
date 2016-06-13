@@ -11,7 +11,7 @@ PS1='[\u@\h \W]\$ '
 export EDITOR=vim
 
 # GTK 3 config dir
-export XDG_CONFIG_HOME=/gtk-3.0/settings.ini
+export XDG_CONFIG_HOME=~/.config/gtk-3.0/settings.ini
 
 # don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth

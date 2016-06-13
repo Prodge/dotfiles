@@ -16,7 +16,8 @@ alias cddeploy='cd ~/projects/signiq8-deploy'
 alias upgrade='sudo apt-get update && sudo apt-get -y upgrade'
 
 alias cls='clear && ls --color=auto'
-alias ll='clear && ls -alh --color=auto'
+alias ll='ls -alh --color=auto'
+alias cll='clear && ls -alh --color=auto'
 alias lld='ll -d -- */'
 alias lsd='ls -d -- */'
 
@@ -33,3 +34,6 @@ alias ls='ls --color=auto'
 
 # Takes a screenshot every 1.1 seconds (to avoid duplicate names)
 alias timelapse='while [ 1 ]; do scrot -q 80 $(date +%s).jpg; sleep 1.1; done'
+
+# thefuck
+eval "$(thefuck --alias)"
