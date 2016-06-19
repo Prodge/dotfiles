@@ -28,6 +28,8 @@ alias c='clear'
 
 alias rgrep='grep --colour=auto -rn'
 
+alias g='git'
+
 # Command default flags
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
