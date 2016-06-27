@@ -17,6 +17,9 @@ rm -rf tmp/* &
 # Starting autokey
 #autokey &
 
+# Starting redshift
+redshift &
+
 # Setting background
 xsetroot -solid "#000000" &
 
