@@ -16,7 +16,7 @@ set formatoptions=tcroqln
 "Starts plugin manager pathogen
 execute pathogen#infect()
 
-let g:indentLine_char = '¦'
+let g:indentLine_char = '|'
 
 "Start NERDTree Automatically
 "Autocmd vimenter * NERDTree
