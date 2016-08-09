@@ -93,7 +93,7 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l -f --nocolor --ignore-case --ignore-dir venv  --ignore-dir build-vptest --ignore-dir build-vpweb --ignore-dir node_modules --ignore-dir vpweb --ignore-dir vptest --ignore-dir cover --ignore-dir media_files --ignore "*.pyc" -g ""'
 endif
 
-"bind K to grep word under cursor
+"Bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "Highlighting search matches
@@ -132,9 +132,12 @@ set ignorecase
 "Auto refresh files on change
 set autoread
 
-"filetypes for closetag to run
+"Filetypes for closetag to run
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
 
-" Remap F1 to escape from insert mode
+"Remap F1 to escape from insert mode
 inoremap <F1> <Esc>
 noremap <F1> <Esc>
+
+"Share clipboard with X
+set clipboard=unnamed_plus
