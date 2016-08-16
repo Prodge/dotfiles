@@ -5,8 +5,8 @@ visualizer_look = "+."
 #visualizer_sync_interval = 0.4
 
 
-startup_screen = "6"
-screen_switcher_mode = "sequence: 5 -> 6 -> 9"
+#startup_screen = "6"
+#screen_switcher_mode = "sequence: 5 -> 6 -> 9"
 
 ignore_leading_the = "yes"
 
