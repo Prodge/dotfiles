@@ -41,4 +41,4 @@ alias timelapse='while [ 1 ]; do scrot -q 80 $(date +%s).jpg; sleep 1.1; done'
 eval "$(thefuck --alias)"
 
 # Find the current git branch
-alias this_branch='git branch | grep "*"'
+alias this_branch='git branch | grep "*" | cut -c 3-'
