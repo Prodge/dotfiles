@@ -36,7 +36,7 @@ compinit
 # History
 #
 
-HISTFILE=~/.histfile
+HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 
@@ -84,5 +84,5 @@ setopt COMPLETE_ALIASES
 # Vim keybindings
 bindkey -v
 
-# Bash behaviour of / search
-bindkey -M main -r '^[/'']'
+# Reverse search like bash
+bindkey "^R" history-incremental-search-backward
