@@ -77,6 +77,10 @@ setopt PRINT_EXIT_VALUE
 # Autocompletion of command line switches for aliases
 setopt COMPLETE_ALIASES
 
+# If a command takes longer than REPORTTIME to run, show TIMEFMT time summary
+REPORTTIME=15
+TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
+
 #
 # Key Bindings
 #
