@@ -24,9 +24,9 @@ HISTFILESIZE=50000
 # instead of after closing the session.
 PROMPT_COMMAND='history -a'
 
-# Add bash aliases.
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
+# Add shell aliases.
+if [ -f ~/.shell_aliases ]; then
+    source ~/.shell_aliases
 fi
 
 #Enable programmable completion
