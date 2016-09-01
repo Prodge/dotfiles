@@ -1,7 +1,7 @@
 #
 # Prompt
 #
-PS1='[\u@\h \W]\$ '
+PS1='[%n@%m %2c]$ '
 
 #
 # Exports
