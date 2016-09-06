@@ -90,3 +90,12 @@ bindkey -v
 
 # Reverse search like bash
 bindkey "^R" history-incremental-search-backward
+
+#
+# Sources
+#
+
+### Bashhub.com Installation.
+if [ -f ~/.bashhub/bashhub.sh ]; then
+    source ~/.bashhub/bashhub.sh
+fi
