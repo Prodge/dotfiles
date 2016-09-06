@@ -11,6 +11,8 @@ alias cdcode='cd ~/code'
 alias cdsiq='cd ~/projects/signiq8/siq8'
 alias cdwow='cd ~/projects/siq8-wow'
 alias cddeploy='cd ~/projects/signiq8-deploy'
+alias cdderni='cd ~/projects/siq8-dernistaging'
+alias cdharvey='cd ~/projects/siq8-harveynorman'
 
 # Batch actions
 alias upgrade='sudo apt-get update && sudo apt-get -y upgrade'
