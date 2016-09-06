@@ -96,6 +96,6 @@ bindkey "^R" history-incremental-search-backward
 #
 
 ### Bashhub.com Installation.
-if [ -f ~/.bashhub/bashhub.sh ]; then
-    source ~/.bashhub/bashhub.sh
+if [ -f ~/.bashhub/bashhub.zsh ]; then
+    source ~/.bashhub/bashhub.zsh
 fi
