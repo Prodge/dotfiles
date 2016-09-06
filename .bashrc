@@ -37,3 +37,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+### Bashhub.com Installation.
+if [ -f ~/.bashhub/bashhub.sh ]; then
+    source ~/.bashhub/bashhub.sh
+fi
+
