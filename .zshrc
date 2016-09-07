@@ -91,6 +91,10 @@ bindkey -v
 # Reverse search like bash
 bindkey "^R" history-incremental-search-backward
 
+# Skip forward/back a word with ctrl-arrow
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+
 #
 # Sources
 #
