@@ -51,7 +51,7 @@ alias ls='ls --color=auto'
 #
 
 alias cac='ssh root@64.137.226.111'
-alias digitalocean='ssh root@188.166.233.19'
+alias digitalocean='ssh root@188.166.245.130'
 
 #
 # Applications
