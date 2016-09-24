@@ -43,6 +43,7 @@ match Error />>>>>>>/
 
 filetype plugin on
 
+let g:paredit_leader = '\'
 let g:paredit_electric_return = 0
 
 "Nerdtree ignore compiled python files
