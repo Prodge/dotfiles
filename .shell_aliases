@@ -15,6 +15,7 @@ alias g='git'
 alias notes='cd ~/documents/University/Notes/2016/ && ls'
 alias takenotes='vi -O ~/documents/University/Notes/2016/todo.txt'
 alias cdcode='cd ~/code'
+alias ctptg='cd ~/code/clojure/papertrailgaming/web'
 
 #
 # Work shortcuts
