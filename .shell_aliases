@@ -72,5 +72,5 @@ function push() {
     git push -u "$@" $(this_branch);
 }
 function pull() {
-    git push -u "$@" $(this_branch);
+    git pull -u "$@" $(this_branch);
 }
