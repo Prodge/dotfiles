@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/vimagit"]
 	path = .vim/bundle/vimagit
 	url = https://github.com/jreybert/vimagit.git
+[submodule ".vim/bundle/vim-cljfmt"]
+	path = .vim/bundle/vim-cljfmt
+	url = https://github.com/venantius/vim-cljfmt.git
