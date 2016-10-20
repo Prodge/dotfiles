@@ -27,6 +27,7 @@ alias cddeploy='cd ~/projects/signiq8-deploy'
 alias cdderni='cd ~/projects/siq8-dernistaging'
 alias cdharvey='cd ~/projects/siq8-harveynorman'
 alias cdtv='cd ~/projects/signiqtv-provision'
+alias cdda='cd ~/projects/siq-desktop-backend'
 
 #
 # Batch actions
@@ -74,4 +75,9 @@ function push() {
 }
 function pull() {
     git pull -u "$@" $(this_branch);
+}
+
+# Notify me when the command finishes running
+function notify(){
+    "$@" && notify-send 'DONE'
 }
