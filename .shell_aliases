@@ -77,6 +77,13 @@ function pull() {
     git pull -u "$@" $(this_branch);
 }
 
+# Shortcut for adding and commiting a file
+function commit() {
+    git add "$1";
+    git commit -m "$2";
+    git push &;
+}
+
 # Notify me when the command finishes running
 function notify(){
     "$@" && notify-send 'DONE'
