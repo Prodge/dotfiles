@@ -81,7 +81,7 @@ function pull() {
 function commit() {
     git add "$1";
     git commit -m "$2";
-    git push 3>/dev/null &;
+    git push >/dev/null 2>&1 3>&1 &;
 }
 
 # Notify me when the command finishes running
