@@ -79,8 +79,9 @@ function pull() {
 
 # Shortcut for adding and commiting a file
 function commit() {
-    git add "$1";
-    git commit -m "$2";
+    message="${@:2}";
+    git add "$1"
+    git commit -m "$message";
     git push >/dev/null 2>&1 3>&1 &;
 }
 
