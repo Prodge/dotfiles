@@ -48,6 +48,7 @@ alias connect_unifi='sudo ip link set w1p1s0 down && netctl start unifi'
 alias grep='grep --color=auto'
 alias rgrep='grep --colour=auto -rn'
 alias ls='ls --color=auto'
+alias htop='htop -d 0.01'
 
 #
 # Remote Hosts
