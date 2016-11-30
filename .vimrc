@@ -142,3 +142,6 @@ noremap <F1> <Esc>
 
 "Share clipboard with X
 set clipboard=unnamed_plus
+
+"Shortcut to Dsplit to the current word
+nnoremap <C-g> :Dsplit <C-R><C-W><CR>
