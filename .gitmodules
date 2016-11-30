@@ -52,3 +52,9 @@
 [submodule ".vim/bundle/vim-cljfmt"]
 	path = .vim/bundle/vim-cljfmt
 	url = https://github.com/venantius/vim-cljfmt.git
+[submodule ".vim/bundle/vim-classpath"]
+	path = .vim/bundle/vim-classpath
+	url = https://github.com/tpope/vim-classpath.git
+[submodule ".vim/bundle/vim-slave"]
+	path = .vim/bundle/vim-slave
+	url = https://github.com/tpope/vim-salve.git
