@@ -58,3 +58,6 @@
 [submodule ".vim/bundle/vim-slave"]
 	path = .vim/bundle/vim-slave
 	url = https://github.com/tpope/vim-salve.git
+[submodule ".vim/bundle/vim-clojure-static"]
+	path = .vim/bundle/vim-clojure-static
+	url = https://github.com/guns/vim-clojure-static.git
