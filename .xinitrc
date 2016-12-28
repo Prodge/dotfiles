@@ -23,5 +23,8 @@ redshift &
 # Setting background
 xsetroot -solid "#000000" &
 
+# Enable numlock
+numlock on &
+
 # Start xmonad
 exec xmonad
