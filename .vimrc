@@ -148,3 +148,17 @@ nnoremap <C-g> :Dsplit <C-R><C-W><CR>
 
 "jedi-vim go to tabs not buffers when going to definition
 let g:jedi#use_tabs_not_buffers = 1
+
+"Navigation for dvorak
+nnoremap c k
+nnoremap t j
+nnoremap n l
+
+"Add a new mapping for 'n' as we just replaced it
+nnoremap g n
+
+"Provide chtn / hjkl movements in Insert mode via the <Alt> modifier key
+inoremap <A-h> <C-o>h
+inoremap <A-t> <C-o>j
+inoremap <A-c> <C-o>k
+inoremap <A-n> <C-o>l
