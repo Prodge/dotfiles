@@ -117,6 +117,8 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 "Set page up/down to move in smaller increments
 nnoremap <PageUp> 20k
 nnoremap <PageDown> 20j
+inoremap <PageUp> <C-o>20k
+inoremap <PageDown> <C-o>20j
 
 "Show the next match while entering a search
 "":set incsearch
@@ -154,6 +156,10 @@ nnoremap c k
 nnoremap t j
 nnoremap n l
 
+vnoremap c k
+vnoremap t j
+vnoremap n l
+
 "Add a new mapping for 'n' as we just replaced it
 nnoremap g n
 
@@ -162,3 +168,9 @@ inoremap <A-h> <C-o>h
 inoremap <A-t> <C-o>j
 inoremap <A-c> <C-o>k
 inoremap <A-n> <C-o>l
+
+"Shift navigation jumping movements for chtn
+nnoremap H <C-Left>
+nnoremap N <C-Right>
+inoremap <A-H> <C-Left>
+inoremap <A-N> <C-Right>
