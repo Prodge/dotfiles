@@ -88,5 +88,5 @@ function commit() {
 
 # Notify me when the command finishes running
 function notify(){
-    "$@" && notify-send 'DONE'
+    "$@" && notify-send "Finished Running: $@"
 }
