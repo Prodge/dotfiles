@@ -7,6 +7,7 @@ alias k='kanban'
 alias vi='vim'
 alias c='clear'
 alias g='git'
+alias bang-it-up='g ps -u origin $(this_branch)'
 
 #
 # Home Shortcuts
@@ -90,3 +91,6 @@ function commit() {
 function notify(){
     "$@" && notify-send "Finished Running: $@"
 }
+
+# Tag and Push
+alias gtag='git tag $1 && git push origin $1'
