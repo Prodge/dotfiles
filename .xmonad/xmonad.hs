@@ -1,10 +1,12 @@
+{-# LANGUAGE MultiParamTypeClasses, Rank2Types, TypeFamilies #-}
+
 -- xmonad config used by Vic Fryzel
 -- Author: Vic Fryzel
 -- http://github.com/vicfryzel/xmonad-config
 
 import System.IO
 import System.Exit
-import XMonad
+import XMonad hiding ((|||))
 import XMonad.Hooks.DynamicLog
 import XMonad.Actions.CycleWS
 import XMonad.Hooks.ManageDocks
@@ -14,6 +16,13 @@ import XMonad.Layout.Fullscreen
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
 import XMonad.Layout.Tabbed
+import XMonad.Layout.ZoomRow
+import XMonad.Layout.Named
+import XMonad.Layout.Grid
+import XMonad.Layout.Renamed
+import XMonad.Layout.LayoutCombinators
+import XMonad.Layout.Decoration
+import XMonad.Layout.Simplest
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Layout.Reflect ( reflectHoriz, reflectVert )
 import XMonad.Util.EZConfig(additionalKeys)
@@ -22,10 +31,76 @@ import qualified Data.Map        as M
 import XMonad.Layout.Gaps
 
 import qualified Data.Map as M
-import XMonad
 import qualified XMonad as XMonad
 import XMonad.Hooks.SetWMName
 import qualified XMonad.StackSet as W
+import qualified XMonad.Layout.Groups as G
+import XMonad.Layout.Groups.Helpers
+
+
+
+-- * Helper: ZoomRow of Group elements
+-- | Compare two 'Group's by comparing the ids of their layouts.
+data GroupEQ a = GroupEQ
+  deriving (Show, Read)
+
+instance Eq a => EQF GroupEQ (G.Group l a) where
+    eq _ (G.G l1 _) (G.G l2 _) = G.sameID l1 l2
+
+zoomRowG :: (Eq a, Show a, Read a, Show (l a), Read (l a))
+            => ZoomRow GroupEQ (G.Group l a)
+zoomRowG = zoomRowWith GroupEQ
+
+
+------------------------------------------------------------------------
+-- Layout definintions
+--
+
+-- * Row of columns
+
+rowOfColumns = G.group column zoomRowG
+    where column = renamed [CutWordsLeft 2, PrependWords "ZoomColumn"] $ Mirror zoomRow
+
+
+------------------------------------------------------------------------
+-- Layout commands
+--
+
+-- * Row of columns
+
+-- | Increase the width of the focused column
+zoomColumnIn :: X ()
+zoomColumnIn = sendMessage $ G.ToEnclosing $ SomeMessage $ zoomIn
+
+-- | Decrease the width of the focused column
+zoomColumnOut :: X ()
+zoomColumnOut = sendMessage $ G.ToEnclosing $ SomeMessage $ zoomOut
+
+-- | Reset the width of the focused column
+zoomColumnReset :: X ()
+zoomColumnReset = sendMessage $ G.ToEnclosing $ SomeMessage $ zoomReset
+
+-- | Toggle whether the currently focused column should
+-- take up all available space whenever it has focus
+toggleColumnFull :: X ()
+toggleColumnFull = sendMessage $ G.ToEnclosing $ SomeMessage $ ZoomFullToggle
+
+-- | Increase the heigth of the focused window
+zoomWindowIn :: X ()
+zoomWindowIn = sendMessage zoomIn
+
+-- | Decrease the height of the focused window
+zoomWindowOut :: X ()
+zoomWindowOut = sendMessage zoomOut
+
+-- | Reset the height of the focused window
+zoomWindowReset :: X ()
+zoomWindowReset = sendMessage zoomReset
+
+-- | Toggle whether the currently focused window should
+-- take up the whole column whenever it has focus
+toggleWindowFull :: X ()
+toggleWindowFull = sendMessage ZoomFullToggle
 
 
 
@@ -86,8 +161,10 @@ myLayout = avoidStruts (
     reflectVert (Mirror (Tall 1 (3/100) (1/2))) |||
     {-tabbed shrinkText tabConfig |||-}
     {-Full |||-}
-    spiral (6/7)) |||
-    noBorders (fullscreenFull Full)
+    spiral (6/7) |||
+    Mirror (rowOfColumns) |||
+    Grid |||
+    noBorders (fullscreenFull Full))
 
 
 ------------------------------------------------------------------------
@@ -260,11 +337,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Shrink the master area.
   , ((modMask, xK_k),
-     sendMessage Shrink)
+     sequence_ [zoomWindowOut, sendMessage Shrink])
 
   -- Expand the master area.
   , ((modMask, xK_x),
-     sendMessage Expand)
+     sequence_ [zoomWindowIn, sendMessage Expand])
 
   -- Push window back into tiling.
   , ((modMask, xK_t),
