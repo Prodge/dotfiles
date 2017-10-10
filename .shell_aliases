@@ -57,6 +57,7 @@ alias htop='htop -d 0.01'
 
 alias cac='ssh root@64.137.226.111'
 alias digitalocean='ssh root@188.166.245.130'
+alias work='ssh tim@175.45.85.70 -p 22229'
 
 #
 # Applications
