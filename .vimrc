@@ -32,9 +32,13 @@ nmap <C-t> :tabnew<CR>
 nmap <C-u> :tabnext<CR>
 nmap <C-e> :tabprevious<CR>
 
+"Toggle buffers into tabs
+let notabs = 0
+nnoremap <silent> <F8> :let notabs=!notabs<Bar>:if notabs<Bar>:tabo<Bar>:else<Bar>:tab ball<Bar>:tabn<Bar>:endif<CR>
+
 "Resize windows
-nmap <C-j> :vertical resize +5<CR>
-nmap <C-k> :vertical resize -5<CR>
+nmap <A-u> :vertical resize +5<CR>
+nnoremap <A-e> :vertical resize -5<CR>
 
 "Highlight git conflicts
 match Error /=======/
