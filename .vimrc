@@ -27,6 +27,12 @@ let NERDTreeShowHidden=1
 "Set NERDTree Toggle to ctrl-n
 map <C-n> :NERDTreeToggle<CR>
 
+"Enable Rainbow Parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 "Tab Command Maps
 nmap <C-t> :tabnew<CR>
 nmap <C-u> :tabnext<CR>
@@ -110,6 +116,11 @@ match Error /ipdb.set_trace()/
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
+"YouCompleteMe GoTo Maps
+nmap <C-g> :YcmCompleter GoTo<CR>
+let g:ycm_goto_buffer_command = 'new-tab'
+let g:ycm_python_binary_path = 'python'
+
 "Keep cursor in the same place when moving pages
 "nnoremap <PageUp> 20<C-y>
 "nnoremap <PageDown> 20<C-e>
@@ -143,10 +154,10 @@ inoremap <F1> <Esc>
 noremap <F1> <Esc>
 
 "Share clipboard with X
-set clipboard=unnamed_plus
+"set clipboard=unnamed_plus
 
 "Shortcut to Dsplit to the current word
-nnoremap <C-g> :Dsplit <C-R><C-W><CR>
+"nnoremap <C-g> :Dsplit <C-R><C-W><CR>
 
 "jedi-vim go to tabs not buffers when going to definition
 let g:jedi#use_tabs_not_buffers = 1
