@@ -1,8 +1,15 @@
 decorations none
 transparent false
 dockapp_mode none
-geometry 5x1-400+0
-max_geometry 5x1-325-10
+
+# 1 row of 12 icons, each 23px wide/tall. Resolution 3840x2160.
+# This icon size aligns with the size of xmobar with font "xft:monospace-8"
+# position = display_width - (num_icons * icon_size)
+# position = 3840 - (12 * 23) = 3564
+# Example: geometry 12x1+3564
+# Defined here for a 1080p screen
+
+geometry 12x1+1730
 background "#000000"
 kludges force_icons_size
 grow_gravity NE

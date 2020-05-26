@@ -1,5 +1,5 @@
 # Setting keyboard repeat rate
-xset r rate 300 40 &
+xset r rate 200 40 &
 
 # Set keyboard layout to dvorak
 exec setxkbmap us -variant dvp &
@@ -26,5 +26,5 @@ xsetroot -solid "#000000" &
 # Enable numlock
 numlock on &
 
-# Start xmonad
-exec xmonad
+# Start xmonad # ubuntu handles this
+#exec xmonad

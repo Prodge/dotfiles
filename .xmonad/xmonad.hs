@@ -117,7 +117,7 @@ myTerminal = "/usr/bin/urxvt"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:web","2:code","3:term","4","5"] ++ map show [6..9]
+myWorkspaces = map show [1..9]
 
 
 ------------------------------------------------------------------------
@@ -439,13 +439,14 @@ myStartupHook = return ()
 -- Run xmonad with all the defaults we set up.
 --
 main = do
-  xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobar.hs"
+  xmproc <- spawnPipe "/usr/bin/xmobar"
   xmonad $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc
-          , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
+          , ppTitle = xmobarColor xmobarTitleColor "" . shorten 50
           , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
-          , ppSep = "   "}
+          , ppSep = "   "
+      }
       , manageHook = manageDocks <+> myManageHook
       , startupHook = setWMName "LG3D"
   }
@@ -474,8 +475,9 @@ defaults = defaultConfig {
     mouseBindings      = myMouseBindings,
 
     -- hooks, layouts
-    {-layoutHook         = gaps [(U,20)] $ Tall 1 (3/100) (1/2) ||| Full,   --leave gaps at the top-}
-    layoutHook         = smartBorders $ myLayout,
+    --layoutHook         = gaps [(U,20)] $ Tall 1 (3/100) (1/2) ||| Full,   --leave gaps at the top
+    --layoutHook         = smartBorders $ myLayout,
+    layoutHook         = gaps [(U,16)] $ smartBorders $ myLayout,
     manageHook         = myManageHook,
     startupHook        = myStartupHook
 }

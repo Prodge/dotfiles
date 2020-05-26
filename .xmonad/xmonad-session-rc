@@ -1,0 +1,9 @@
+xcompmgr -n &
+
+xsetroot -solid "#000000" &
+
+xset r rate 200 60 &
+
+stalonetray &
+
+nm-applet --sm-disable &
