@@ -56,6 +56,9 @@ setopt HIST_FIND_NO_DUPS
 # Misc Options
 #
 
+# disable compfix on mac - complains about insecure files
+ZSH_DISABLE_COMPFIX="true"
+
 # cd into a file without typing cd
 setopt autocd
 
